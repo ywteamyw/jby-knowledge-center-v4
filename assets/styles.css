@@ -49,7 +49,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .btn-ghost-navy{background:transparent;color:var(--navy);border:1px solid var(--navy)}
 .btn-ghost-navy:hover{background:var(--navy);color:var(--white)}
 .btn-ghost-light{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(8px)}
-.btn-ghost-light:hover{background:var(--white);color:var(--ink)}
+.btn-ghost-light:hover{background:rgba(255,255,255,.16);color:var(--white)}
 .link-arrow{display:inline-flex;align-items:center;gap:8px;font-family:'Mesmerize',sans-serif;text-transform:uppercase;
   font-size:16px;letter-spacing:.04em;color:var(--navy)}
 .link-arrow svg{width:16px;height:16px}
