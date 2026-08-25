@@ -385,6 +385,7 @@
   /* ---------- Gallery (Photos / Videos): thumb switch, arrows, open lightbox ---------- */
   document.querySelectorAll(".evgal").forEach(function(g){
     var hero = g.querySelector(".eg-hero img");
+    var heroEmbed = g.querySelector(".eg-hero iframe.eg-embed");
     var heroBox = g.querySelector(".eg-hero");
     var play = g.querySelector(".eg-play");
     var thumbs = [].slice.call(g.querySelectorAll(".eg-thumb"));
@@ -397,7 +398,8 @@
     function set(i){
       cur = (i + thumbs.length) % thumbs.length;
       var t = thumbs[cur];
-      if(hero){ hero.src = t.getAttribute("data-full") || t.querySelector("img").src; }
+      if(heroEmbed && t.getAttribute("data-vid")){ heroEmbed.src = "https://www.youtube.com/embed/"+t.getAttribute("data-vid")+"?autoplay=1&mute=1&loop=1&playlist="+t.getAttribute("data-vid")+"&controls=0&modestbranding=1&rel=0&playsinline=1"; }
+      else if(hero){ hero.src = t.getAttribute("data-full") || t.querySelector("img").src; }
       thumbs.forEach(function(x,j){ x.classList.toggle("active", j===cur); });
     }
     thumbs.forEach(function(t,i){ t.addEventListener("click", function(){ set(i); }); });
