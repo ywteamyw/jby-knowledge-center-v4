@@ -562,7 +562,7 @@ footer.site{background:var(--page);padding:48px 40px 40px;color:var(--c2);font-s
 .foot-locs{display:flex;flex-direction:column;gap:13px;margin:0}
 .foot-locs a{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;line-height:20px;letter-spacing:0;text-transform:uppercase;color:var(--c0);transition:color .2s}
 .foot-locs a:hover{color:var(--navy)}
-.to-top{width:44px;height:44px;border-radius:2px;background:rgba(0,0,0,0.72);color:#fff;display:flex;align-items:center;justify-content:center;transition:.25s;justify-self:end;align-self:start;margin-top:6px}
+.to-top{width:44px;height:44px;border-radius:2px;background:rgba(0,0,0,0.72);color:#fff;display:flex;align-items:center;justify-content:center;transition:.25s;justify-self:end;align-self:start;margin-top:18px}
 .to-top:hover{background:#000}.to-top svg{width:20px;height:20px}
 @media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}.foot-col{padding-top:0}.to-top{justify-self:start;margin-top:0}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
