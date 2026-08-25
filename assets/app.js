@@ -414,7 +414,10 @@
       var sc = Math.max(w/16, h/9);
       heroEmbed.style.width = Math.ceil(16*sc)+"px"; heroEmbed.style.height = Math.ceil(9*sc)+"px";
     }
-    if(heroEmbed){ coverEmbed(); window.addEventListener("resize", coverEmbed); }
+    if(heroEmbed){
+      if(window.ResizeObserver){ new ResizeObserver(coverEmbed).observe(heroBox); }
+      else { coverEmbed(); window.addEventListener("resize", coverEmbed); }
+    }
   });
 
   /* ---------- Edge fade only while the row can scroll (chips + tab bar) ---------- */
