@@ -457,7 +457,6 @@
         var grid = hits.map(function(c){ return c.outerHTML; }).join("");
         blocks += '<div class="sr-block"><div class="sr-secline">'+
           '<h2>'+sec.label+'<span class="sr-n">('+hits.length+')</span></h2>'+
-          '<a class="link-arrow" href="index.html#'+sec.tab+'">See all '+I.arrow+'</a>'+
           '</div><div class="media-grid cols-3">'+grid+'</div></div>';
       });
       var head = '<div class="sr-head"><div class="sr-title">'+
