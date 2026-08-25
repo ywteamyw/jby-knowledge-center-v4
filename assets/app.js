@@ -241,6 +241,8 @@
       e.preventDefault();
       var name = show(el.dataset.tab);
       if(history.replaceState) history.replaceState(null,"",location.pathname+"#"+name);
+      var _hp = document.querySelector(".hub-panels");
+      if(_hp){ var _y = _hp.getBoundingClientRect().top + window.scrollY - 142; window.scrollTo({top: _y<0?0:_y, behavior:"smooth"}); }
     });
     window.addEventListener("hashchange", function(){ show((location.hash||"").replace("#","")||"videos"); });
     show((location.hash||"").replace("#","")||"videos");
