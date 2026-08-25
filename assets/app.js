@@ -408,7 +408,33 @@
     if(n){ n.addEventListener("click", function(){ set(cur+1); }); }
     if(heroBox){ heroBox.addEventListener("click", function(){ openLightbox(items, cur); }); }
     if(play){ play.addEventListener("click", function(e){ e.preventDefault(); openLightbox(items, cur); }); }
+    function coverEmbed(){
+      if(!heroEmbed || !heroBox) return;
+      var w = heroBox.clientWidth, h = heroBox.clientHeight; if(!w || !h) return;
+      var sc = Math.max(w/16, h/9);
+      heroEmbed.style.width = Math.ceil(16*sc)+"px"; heroEmbed.style.height = Math.ceil(9*sc)+"px";
+    }
+    if(heroEmbed){ coverEmbed(); window.addEventListener("resize", coverEmbed); }
   });
+
+  /* ---------- Edge fade only while the row can scroll (chips + tab bar) ---------- */
+  (function(){
+    function shade(el){
+      var atStart = el.scrollLeft <= 1;
+      var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+      if(atStart && atEnd){ el.style.webkitMaskImage = el.style.maskImage = "none"; return; }
+      var L = atStart ? "#000 0" : "transparent 0, #000 22px";
+      var R = atEnd ? "#000 100%" : "#000 calc(100% - 22px), transparent 100%";
+      var m = "linear-gradient(90deg, "+L+", "+R+")";
+      el.style.webkitMaskImage = el.style.maskImage = m;
+    }
+    document.querySelectorAll(".kcnav-inner, .chips").forEach(function(el){
+      var f = function(){ shade(el); };
+      el.addEventListener("scroll", f, {passive:true});
+      window.addEventListener("resize", f);
+      f();
+    });
+  })();
 
   /* ---------- Search forms: never submit an empty query ---------- */
   document.querySelectorAll("form.searchbar").forEach(function(f){
