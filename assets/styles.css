@@ -655,3 +655,8 @@ footer.site{background:var(--page);padding:48px 40px 40px;color:var(--c2);font-s
 /* Mobile: smaller article title */
 @media(max-width:640px){.article-card h1{font-size:22px;line-height:30px}}
 @media(max-width:400px){.article-card h1{font-size:20px;line-height:28px}}
+
+/* Videos gallery: poster image under the embed; on mobile show only the poster
+   (no YouTube title/controls chrome) — the full video opens in the lightbox */
+.evgal .eg-hero .eg-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:640px){.evgal .eg-hero .eg-embed{display:none}}
