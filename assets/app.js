@@ -518,6 +518,16 @@
     if(inp) inp.value = q0;
     search(q0);
 
+    /* when results are showing, the Search button becomes a Clear (X) button */
+    var sbtn = document.querySelector("form.searchbar button");
+    if(sbtn && q0){
+      sbtn.type = "button";
+      sbtn.classList.add("sr-clearbtn");
+      sbtn.setAttribute("aria-label", "Clear search");
+      sbtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+      sbtn.addEventListener("click", function(){ window.location.href = "index.html"; });
+    }
+
     /* clearing the field (native X) returns to the Knowledge Center home */
     if(inp){
       inp.addEventListener("search", function(){
