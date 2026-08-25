@@ -471,7 +471,8 @@ section{position:relative}
 .sr-secline h2 .sr-n{color:var(--c4);margin-left:9px}
 .sr-secline .link-arrow{flex:0 0 auto}
 .sr-empty{padding:16px 0 90px}
-.sr-empty h2{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:30px;line-height:44px;letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 10px}
+.sr-empty h2{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:22px;line-height:32px;letter-spacing:0;text-transform:uppercase;color:var(--navy);margin:0 0 10px}
+.sr-empty h2 span{color:var(--ink)}
 .sr-empty h2 span{color:var(--navy)}
 .sr-empty p{font-size:16px;line-height:24px;color:var(--c4);margin:0 0 24px;max-width:520px}
 
