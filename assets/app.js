@@ -463,7 +463,7 @@
         '<h1>Results for <span>&ldquo;'+esc(q)+'&rdquo;</span></h1></div>'+
         '<p class="sr-count">'+total+' result'+(total===1?"":"s")+'</p></div>';
       wrap.innerHTML = total ? head + blocks
-        : head + '<div class="sr-empty"><h2>No results for <span>&ldquo;'+esc(q)+'&rdquo;</span></h2>'+
+        : '<div class="sr-empty"><h2>No results for <span>&ldquo;'+esc(q)+'&rdquo;</span></h2>'+
           '<p>Try a different search, or browse everything in the Knowledge Center.</p>'+
           '<a class="btn btn-md btn-solid" href="index.html#all"><span>Browse all</span></a></div>';
       bindHover(wrap);
