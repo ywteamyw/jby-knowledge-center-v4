@@ -664,3 +664,22 @@ footer.site{position:relative;background:var(--page);padding:48px 40px 40px;colo
 /* Search clear (X) button: plain dark icon, no navy fill */
 .searchbar .sr-clearbtn{background:transparent;color:var(--c2);border:0;box-shadow:none;padding:0 16px}
 .searchbar .sr-clearbtn:hover{background:transparent;color:var(--ink)}
+
+
+/* ---- Galleries on phones and tablets ------------------------------------
+   The full-bleed hero with a thumbnail strip needs a mouse and a wide screen.
+   Below 1024px the gallery becomes a plain two-column grid of photos, the same
+   way the model page shows its exterior and interior sets, and tapping a tile
+   opens the lightbox. ------------------------------------------------------ */
+@media (max-width:1024px){
+  .evgal{height:auto;min-height:0;overflow:visible;background:transparent}
+  .evgal .eg-hero,.evgal .eg-word,.evgal .eg-arrow{display:none}
+  .evgal .eg-thumbs{position:static;display:grid;grid-template-columns:repeat(2,1fr);
+    gap:14px;padding:0 24px;overflow:visible;justify-content:stretch}
+  .evgal .eg-thumb{width:100%;height:auto;aspect-ratio:4/3;border-radius:2px;box-shadow:none;cursor:zoom-in}
+  .evgal .eg-thumb.active{box-shadow:none}
+  .evgal .eg-thumb img{border-radius:2px}
+}
+@media (max-width:520px){
+  .evgal .eg-thumbs{gap:12px;padding:0 22px}
+}
