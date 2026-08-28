@@ -694,3 +694,9 @@ footer.site{position:relative;background:var(--page);padding:48px 40px 40px;colo
 @media (max-width:520px){
   .evgal .eg-thumbs{gap:12px;padding:0 22px}
 }
+
+/* The viewer counter hangs 42px below the stage, which on a phone falls off the
+   bottom of the screen. There it sits at the top instead, level with the close button. */
+@media (max-width:1024px){
+  .lb-count{position:fixed;top:36px;left:22px;right:auto;bottom:auto;font-size:15px;color:rgba(255,255,255,.8);z-index:6}
+}
