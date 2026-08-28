@@ -676,7 +676,9 @@ footer.site{position:relative;background:var(--page);padding:48px 40px 40px;colo
   .evgal .eg-hero,.evgal .eg-word,.evgal .eg-arrow{display:none}
   .evgal .eg-thumbs{position:static;display:grid;grid-template-columns:repeat(2,1fr);
     gap:14px;padding:0 24px;overflow:visible;justify-content:stretch}
-  .evgal .eg-thumb{width:100%;height:auto;aspect-ratio:4/3;border-radius:2px;box-shadow:none;cursor:zoom-in}
+  .evgal .eg-thumb{width:100%;height:auto;aspect-ratio:4/5;border-radius:2px;box-shadow:none;cursor:zoom-in}
+  /* every other tile is landscape, the way the model page alternates them */
+  .evgal .eg-thumb:nth-child(4n+3),.evgal .eg-thumb:nth-child(4n){aspect-ratio:3/2}
   .evgal .eg-thumb.active{box-shadow:none}
   .evgal .eg-thumb img{border-radius:2px}
 }
