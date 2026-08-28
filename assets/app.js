@@ -365,7 +365,8 @@
       } else {
         media.innerHTML = '<img src="'+it.src+'" alt="" />';
       }
-      if(count) count.textContent = (idx + 1) + " / " + items.length;
+      /* current photo in white, the "/ total" quieter, so the position reads at a glance */
+      if(count) count.innerHTML = '<b>' + (idx + 1) + '</b><span class="lb-of"> / ' + items.length + '</span>';
     }
     function go(d){ idx = (idx + d + items.length) % items.length; render(); }
     function close(){ lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); media.innerHTML = ""; document.body.style.overflow = ""; }
