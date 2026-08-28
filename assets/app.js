@@ -372,7 +372,11 @@
     lb.querySelector(".lb-close").addEventListener("click", close);
     lb.querySelector(".lb-prev").addEventListener("click", function(){ go(-1); });
     lb.querySelector(".lb-next").addEventListener("click", function(){ go(1); });
-    lb.addEventListener("click", function(e){ if(e.target === lb) close(); });
+    /* a tap anywhere on the dark surround closes the viewer, not only on the very edge */
+    lb.addEventListener("click", function(e){
+      var t = e.target;
+      if(t === lb || t === media || (t.classList && t.classList.contains("lb-stage"))) close();
+    });
     document.addEventListener("keydown", function(e){
       if(!lb.classList.contains("open")) return;
       if(e.key === "Escape") close();
