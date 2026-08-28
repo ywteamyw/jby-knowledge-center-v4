@@ -673,9 +673,15 @@ footer.site{position:relative;background:var(--page);padding:48px 40px 40px;colo
    opens the lightbox. ------------------------------------------------------ */
 @media (max-width:1024px){
   .evgal{height:auto;min-height:0;overflow:visible;background:transparent}
-  .evgal .eg-hero,.evgal .eg-word,.evgal .eg-arrow{display:none}
+  .evgal .eg-hero,.evgal .eg-arrow{display:none}
+  /* the "Photos" / "Videos" label stays, but as a plain heading above the grid */
+  .evgal .eg-word{position:static;text-align:left;padding:0 24px;margin:0 0 16px;color:var(--ink);
+    font-size:20px;line-height:28px;bottom:auto}
+  .evgal{padding:8px 0 34px}
   .evgal .eg-thumbs{position:static;display:grid;grid-template-columns:repeat(2,1fr);
     gap:14px;padding:0 24px;overflow:visible;justify-content:stretch}
+  /* an odd last photo runs the full width instead of leaving a hole in the grid */
+  .evgal .eg-thumb:last-child:nth-child(odd){grid-column:1 / -1;aspect-ratio:16/9}
   .evgal .eg-thumb{width:100%;height:auto;aspect-ratio:4/5;border-radius:2px;box-shadow:none;cursor:zoom-in}
   /* every other tile is landscape, the way the model page alternates them */
   .evgal .eg-thumb:nth-child(4n+3),.evgal .eg-thumb:nth-child(4n){aspect-ratio:3/2}
