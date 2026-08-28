@@ -700,3 +700,16 @@ footer.site{position:relative;background:var(--page);padding:48px 40px 40px;colo
 @media (max-width:1024px){
   .lb-count{position:fixed;top:36px;left:22px;right:auto;bottom:auto;font-size:15px;color:rgba(255,255,255,.8);z-index:6}
 }
+
+/* Viewer chrome matches the model page: translucent squares pressed to the edges,
+   white counter, so both galleries behave and read the same way. */
+.lb-btn{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lb-btn:hover{background:rgba(255,255,255,.26)}
+.lb-count{color:#fff}
+@media (max-width:1024px){
+  .lb-prev{left:6px}
+  .lb-next{right:6px}
+  .lb-close{top:16px;right:16px}
+  .lb-count{color:#fff}
+}
