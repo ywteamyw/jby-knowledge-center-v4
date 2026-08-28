@@ -402,7 +402,11 @@
       if(heroEmbed && t.getAttribute("data-vid")){ heroEmbed.src = "https://www.youtube.com/embed/"+t.getAttribute("data-vid")+"?autoplay=1&mute=1&loop=1&playlist="+t.getAttribute("data-vid")+"&controls=0&modestbranding=1&rel=0&playsinline=1"; }
       thumbs.forEach(function(x,j){ x.classList.toggle("active", j===cur); });
     }
-    thumbs.forEach(function(t,i){ t.addEventListener("click", function(){ set(i); }); });
+    thumbs.forEach(function(t,i){ t.addEventListener("click", function(){
+      set(i);
+      /* on phones and tablets the hero is hidden, so a tap on a tile opens the viewer */
+      if(window.matchMedia("(max-width:1024px)").matches){ openLightbox(items, i); }
+    }); });
     var p = g.querySelector(".eg-arrow.prev"), n = g.querySelector(".eg-arrow.next");
     if(p){ p.addEventListener("click", function(){ set(cur-1); }); }
     if(n){ n.addEventListener("click", function(){ set(cur+1); }); }
