@@ -674,6 +674,9 @@ footer.site{position:relative;background:var(--page);padding:48px 40px 40px;colo
 @media (max-width:1024px){
   .evgal{height:auto;min-height:0;overflow:visible;background:transparent}
   .evgal .eg-hero,.evgal .eg-arrow{display:none}
+  /* the dark scrim belongs to the full-bleed hero, it has nothing to darken in the grid */
+  .evgal::after,.evgal::before{content:none;background:none}
+  .evgal .eg-thumb{background:transparent}
   /* the "Photos" / "Videos" label stays, but as a plain heading above the grid */
   .evgal .eg-word{position:static;text-align:left;padding:0 24px;margin:0 0 16px;color:var(--ink);
     font-size:20px;line-height:28px;bottom:auto}
